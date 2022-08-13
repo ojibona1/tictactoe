@@ -231,6 +231,19 @@
                         }
                     }
             }
+            if(list2 === list5 && list5 === list8 ){
+                if(list2 === `<p>X</p>`){
+                    results = 'X won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }else if(list2 === `<p>O</p>`){
+                        results = 'O won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }
+            }
         })
 
     </script>
