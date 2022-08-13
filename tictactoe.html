@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x and 0</title>
+</head>
+<body>
+    <style>
+        body{
+            margin: 0;
+            height: 100%;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        #table{
+            border: 1px solid black;
+            width: 50%;
+            margin: auto;
+            max-width: 300px;
+            height: 350px;
+            padding-right: 20px;
+            transition: 0.4s;
+        }
+        ul{  
+            display: flex;
+            justify-content: space-around;
+            margin-top: 25px;
+            margin-right: 20px;
+        }
+        ul li{
+            cursor: pointer;
+            max-width: 100px;
+            list-style-type: none;
+            border: 1px solid black;
+            font-size: 25px;
+            width: 50.33%;
+            text-align: center;
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        ul li p{
+            margin-top: 30px;
+        }
+
+        ul li:hover{
+            background-color: antiquewhite;
+        }
+
+        #table:hover{
+            background-color: rgb(195, 248, 248);
+        }
+        #result{
+            text-align: center;
+            margin-top: 50px;
+            font-weight: bold;
+            font-family: cursive;
+            font-size: 24px;
+        }
+        #header{
+            text-align: center;
+            margin-top: 10%;
+        }
+
+        @media screen and (max-width:700px) {
+            #table{
+                width: 90%;
+            }
+            
+        }
+    </style>
+
+    <div id="header"><h1>Tic Tac Toe</h1></div>
+
+    <div id="table">
+        <div >
+            <ul id="first-row">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul id="second-row">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul id="third-row">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        let list_button1 = document.querySelectorAll('li');
+        let table = document.querySelector('#table');
+
+        let turn = '';
+
+
+        for(let i=0; i<list_button1.length; i++){
+            list_button1[i].addEventListener('click', ()=>{
+            if(list_button1[i].textContent){
+
+            }else{
+                if(!turn){
+                    turn = 'X'
+                    list_button1[i].innerHTML = `<p>X</p>`;
+                }else{
+                    if(turn === 'X'){
+                        turn = 'O';
+                        list_button1[i].innerHTML = `<p>O</p>`;
+                    }else if(turn !== 'X'){
+                        turn = 'X';
+                        list_button1[i].innerHTML = `<p>X</p>`;
+                    }
+                    
+                }
+            }
+        });
+        }
+
+
+        table.addEventListener('click', ()=>{
+        let list0 = list_button1[0].innerHTML;
+        let list1 = list_button1[1].innerHTML;
+        let list2 = list_button1[2].innerHTML;
+        let list3 = list_button1[3].innerHTML;
+        let list4 = list_button1[4].innerHTML;
+        let list5 = list_button1[5].innerHTML;
+        let list6 = list_button1[6].innerHTML;
+        let list7 = list_button1[7].innerHTML;
+        let list8 = list_button1[8].innerHTML;
+            
+            if(turn){
+                if(list0 === list3 && list3 === list6){
+                    if(list0 === `<p>X</p>`){
+                        results = 'X won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }else if(list0 === `<p>O</p>`){
+                        results = 'O won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }
+                }
+            }
+            if(list0 === list1 && list1 === list2 ){
+                if(list0 === `<p>X</p>`){
+                    results = 'X won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }else if(list0 === `<p>O</p>`){
+                        results = 'O won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }
+            }
+            if(list3 === list4 && list4 === list5 ){
+                if(list3 === `<p>X</p>`){
+                    results = 'X won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }else if(list3 === `<p>O</p>`){
+                        results = 'O won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }
+            }
+            if(list6 === list7 && list7 === list8 ){
+                if(list6 === `<p>X</p>`){
+                    results = 'X won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }else if(list6 === `<p>O</p>`){
+                        results = 'O won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }
+            }
+            if(list0 === list4 && list4 === list8 ){
+                if(list0 === `<p>X</p>`){
+                    results = 'X won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }else if(list0 === `<p>O</p>`){
+                        results = 'O won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }
+            }
+            if(list2 === list4 && list4 === list6 ){
+                if(list2 === `<p>X</p>`){
+                    results = 'X won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }else if(list2 === `<p>O</p>`){
+                        results = 'O won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }
+            }
+            if(list1 === list4 && list4 === list7 ){
+                if(list1 === `<p>X</p>`){
+                    results = 'X won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }else if(list1 === `<p>O</p>`){
+                        results = 'O won';
+                        if(document.querySelector('#result').innerHTML === ''){
+                            document.querySelector('#result').append(results)
+                        }
+                    }
+            }
+        })
+
+    </script>
+
+    
+</body>
+</html>
